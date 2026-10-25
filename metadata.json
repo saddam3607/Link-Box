@@ -1,0 +1,6 @@
+{
+  "name": "টেলিগ্রাম মিনি ভিডিও অ্যাপ",
+  "description": "RGB লাইটিং ইফেক্ট সহ টেলিগ্রাম মিনি ভিডিও অ্যাপ, ১৬:৯ প্লেয়ার, বিকাশ/নগদ/রকেট/বাইনান্স পিন আনলক ও পূর্ণাঙ্গ অ্যাডমিন কন্ট্রোল প্যানেল।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Hind Siliguri', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* 360-degree Rotating RGB Lighting Effect */
+@keyframes rgb-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom RGB Glow and Rotating Border Utilities */
+.rgb-card-wrapper {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 2px;
+  background: transparent;
+  isolation: isolate;
+}
+
+.rgb-card-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 0;
+  animation: rgb-spin var(--rgb-speed, 4s) linear infinite;
+  background: var(--rgb-gradient, conic-gradient(
+    from 0deg,
+    #ff0055,
+    #ff5500,
+    #ffee00,
+    #00ff66,
+    #00ffff,
+    #0066ff,
+    #aa00ff,
+    #ff00aa,
+    #ff0055
+  ));
+  filter: blur(var(--rgb-blur, 3px));
+  opacity: var(--rgb-opacity, 0.95);
+}
+
+.rgb-card-inner {
+  position: relative;
+  z-index: 1;
+  background-color: #0b0f19;
+  border-radius: calc(1rem - 2px);
+  width: 100%;
+  height: 100%;
+}
+
+/* Subtle glow pulse for special VIP highlights */
+@keyframes vip-shimmer {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; filter: drop-shadow(0 0 12px rgba(234, 179, 8, 0.7)); }
+}
+
+.vip-glow {
+  animation: vip-shimmer 2.5s ease-in-out infinite;
+}
+
+/* Hide scrollbars for clean Telegram Mini App feel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
